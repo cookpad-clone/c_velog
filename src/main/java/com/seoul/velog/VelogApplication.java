@@ -1,4 +1,4 @@
-package seoul.velog;
+package com.seoul.velog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
