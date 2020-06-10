@@ -1,0 +1,156 @@
+.root {
+    background-color: rgba(248, 249, 250);
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main {
+    padding-top: 10px;
+}
+li{
+    list-style: none;
+}
+.button-round {
+    margin-left: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: bold;
+    word-break: keep-all;
+    color: rgb(52, 58, 64);
+    cursor: pointer;
+    border-radius: 1rem;
+    outline: none;
+    background: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(52, 58, 64);
+    border-image: initial;
+    transition: all 0.125s ease-in 0s;
+}
+
+.user-photo {
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    float: right;
+    margin-left: 20px;
+}
+
+.user-photo img {
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+    box-shadow: rgba(0, 0, 0, 0.086) 0px 0px 8px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.125s ease-in 0s;
+}
+
+.thumbnail {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 4px;
+    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+    margin: 1rem;
+    overflow: hidden;
+    padding: 9px;
+    color: #333;
+    border-color: white;
+}
+
+.description-wrapper {
+    padding: 9px;
+    color: #333;
+}
+
+.description-wrapper h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.item-info {
+    height: 100px;
+}
+
+.item-user {
+    color: inherit;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    text-decoration: none;
+    float: left;
+}
+.item-likes {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    float: right;
+}
+.sub-info{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: rgb(134, 142, 150);
+}
+.user-info {
+    display: flex;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+    border-top: 1px solid rgb(248, 249, 250);
+}
+
+/* 오른쪽 공지 & 인기태그 탭*/
+.div-aside{
+    display: inline;
+    position: fixed;
+}
+.div-aside ul{
+    padding: 0;
+}
+.div-aside h4 {
+    line-height: 1.5;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(233, 236, 239);
+    font-size: 1.3rem;
+}
+
+.div-aside ul li h5 {
+    font-weight: bold;
+    line-height: 1.5;
+    color: rgb(52, 58, 64);
+    margin: 0px;
+}
+.div-aside ul li .date {
+    color: rgb(134, 142, 150);
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.aside-notice li {
+    margin-top: 15px;
+}
+.aside-tags{
+    margin-top: 3rem;
+}
+.aside-tags ul li{
+    color: rgb(73, 80, 87);
+    line-height: 1.8;
+}
+.aside-tags a {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
