@@ -4,8 +4,8 @@ plugins {
     id 'java'
 }
 
-group = 'seoul'
-version = '0.0.1-SNAPSHOT'
+group = 'com.seoul.velog'
+version = '0.0.1-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 sourceCompatibility = '1.8'
 
 configurations {
@@ -29,7 +29,9 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'mysql:mysql-connector-java'
+    testCompile 'junit:junit:4.12'
     annotationProcessor 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
