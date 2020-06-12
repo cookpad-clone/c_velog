@@ -1,0 +1,210 @@
+
+* {
+    box-sizing: inherit;
+}
+
+div {
+    display: block;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: rgb(33, 37, 41);
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textfield;
+    background-color: -internal-light-dark-color(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
+    border-image: initial;
+}
+
+textarea {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: textarea;
+    background-color: -internal-light-dark-color(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    flex-direction: column;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
+    border-image: initial;
+    padding: 2px;
+}
+
+/*
+
+*/
+.main_frame1 {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background: #63e6be;
+    opacity: 1;
+    -webkit-transition: all .4s ease-in;
+    transition: all .4s ease-in;
+}
+
+.main_frame2 {
+    width: 100%;
+    height: 100%;
+}
+
+.main_frame2-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: 0.5s ease 0s 1 normal forwards running bcCCNc;
+}
+
+.main_frame2-2 {
+    min-width: 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.016) 0px 0px 8px;
+    flex: 1 1 0%;
+}
+
+.main_frame2-3 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.main_frame2-3 > .wrapper {
+    min-height: 0px;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+}
+
+.topic {
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+@media(max-width: 767px){
+    .topic {
+        padding: 1rem;
+            padding-top: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+    }
+}
+
+.topic-content {
+    display: block;
+    font-size: 2.75rem;
+    width: 100%;
+    resize: none;
+    line-height: 1.5;
+    font-weight: bold;
+    color: rgb(33, 37, 41);
+    padding: 0px;
+    outline: none;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+@media(max-width: 767px) {
+    .topic-content {
+        font-size: 1.8rem;
+    }
+}
+
+.topic-mid {
+    height: 6px;
+    width: 4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    background: rgb(73, 80, 87);
+    border-radius: 1px;
+}
+@media(max-width: 767px) {
+    .topic-mid {
+        margin-top: 1rem;
+        margin-bottom: 0.66rem;
+    }
+}
+
+.topic-tag-start {
+    color: rgb(52, 58, 64);
+    font-size: 1.125rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topic-tag-content {
+    display: inline-flex;
+    cursor: text;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    margin-bottom: 0.75rem;
+    min-width: 8rem;
+    outline: none;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+@media(max-width: 767px) {
+    .topic-tag-content {
+        line-height: 1.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+.topic-tag-end {
+    display: block;
+    width: 100%;
+    color: rgb(73, 80, 87);
+    transition: all 0.125s ease-in 0s;
+}
