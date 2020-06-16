@@ -19,10 +19,12 @@ public class ChatService {
 
     private final ObjectMapper objectMapper;
     private Map<String, ChatRoom> chatRooms;
+    private Set<String> chatRoomNames;
 
     @PostConstruct
     private void init(){
         chatRooms = new LinkedHashMap<>();
+        chatRoomNames = new HashSet<>();
     }
 
     public List<ChatRoom> findAllRoom(){
@@ -34,13 +36,16 @@ public class ChatService {
     }
 
     public ChatRoom createRoom(String name){
-        String randomId = UUID.randomUUID().toString();
-        ChatRoom chatRoom = ChatRoom.builder()
-                .roomId(randomId)
-                .name(name)
-                .build();
-        chatRooms.put(randomId, chatRoom);
+        ChatRoom chatRoom = ChatRoom.create(name);
+        chatRooms.put(chatRoom.getRoomId(), chatRoom);
+        chatRoomNames.add(name);
         return chatRoom;
+    }
+    public boolean isExistChatRoom(String name){
+        if(chatRoomNames.contains(name))
+            return true;
+        else
+            return false;
     }
     public <T> void sendMessage(WebSocketSession session, T message) {
         try{
@@ -48,6 +53,5 @@ public class ChatService {
         }catch (IOException e){
             log.error(e.getMessage(), e);
         }
-
     }
 }

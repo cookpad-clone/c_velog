@@ -4,15 +4,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
 
 @Getter
 @NoArgsConstructor
 
-
 public class ChatMessage {
     public enum MessageType{
-        ENTER, TALK
+        ENTER, TALK, OUT
     }
     private MessageType type;
     private String roomId;
