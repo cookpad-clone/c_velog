@@ -13,7 +13,9 @@ public class ChatRoom {
     private String roomId;
     private String name;
     private Set<WebSocketSession> sessions = new HashSet<>();
-
+    public String toString(){
+        return "roomid="+roomId+" name="+name;
+    }
     public static ChatRoom create(String name){
         ChatRoom chatRoom = new ChatRoom();
         chatRoom.roomId = UUID.randomUUID().toString();

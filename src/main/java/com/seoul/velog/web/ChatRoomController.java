@@ -3,12 +3,14 @@ package com.seoul.velog.web;
 import com.seoul.velog.domain.chat.ChatRoom;
 import com.seoul.velog.domain.chat.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/chat")
@@ -20,6 +22,7 @@ public class ChatRoomController {
     @GetMapping("/room")
     public String rooms(Model model){
         model.addAttribute("rooms", chatRoomRepository.findAllRoom());
+
         return "/chat/room";
     }
 
@@ -30,25 +33,12 @@ public class ChatRoomController {
         return chatRoomRepository.findAllRoom();
     }
 
-    // 채팅방 생성
-    @PostMapping("/room")
-    @ResponseBody
-    public ChatRoom createRoom(@RequestParam String name){
-        return chatRoomRepository.createChatRoom(name);
-    }
-
-    // 채팅방 입장 화면
     @GetMapping("/room/enter/{roomId}")
-    public String roomDetail(Model model, @PathVariable String roomId){
-        model.addAttribute("roomId", roomId);
+    public String roomInfo(Model model,@PathVariable String roomId){
+        ChatRoom chatRoom = chatRoomRepository.findRoomById(roomId);
+        model.addAttribute("room", chatRoom);
+        log.info("채팅방 입장 화면... name="+chatRoom.getName());
         return  "/chat/roomdetail";
-    }
-
-    // 특정 채팅방 조회
-    @GetMapping("/room/{roomId}")
-    @ResponseBody
-    public ChatRoom roomInfo(@PathVariable String roomId){
-        return chatRoomRepository.findRoomById(roomId);
     }
 
 }

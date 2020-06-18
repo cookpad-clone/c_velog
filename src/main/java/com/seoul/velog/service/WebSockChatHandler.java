@@ -26,12 +26,4 @@ public class WebSockChatHandler extends TextWebSocketHandler {
         ChatRoom room = chatService.findRoomById(chatMessage.getRoomId());
         room.handleActions(session, chatMessage, chatService);
     }
-    /*
-    protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception{
-        String payload = message.getPayload();
-        log.info("payload {}", payload);
-        TextMessage textMessage = new TextMessage("Welcome chatting server !!");
-        session.sendMessage(textMessage);
-    }
-    */
 }
