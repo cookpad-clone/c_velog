@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: local
+  devtools:
+    livereload:
+      enable: true
+    restart:
+      enable: false
 
   mustache:
     expose-session-attributes: true
