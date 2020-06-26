@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Editor's Dependecy Style -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <!-- Editor's Style -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+    <link rel="stylesheet" href="css/write.css">
+</head>
+
+<body style="overflow-y: initial;">
+
+    <div class="main_frame1" style="width:0%"></div>
+    <!-- main frame -->
+    <div class="main_frame2">
+        <div class="main_frame2-1">
+            <div data-testid="left" class="main_frame2-2" style="background-color: white;">
+                <div data-testid="codemirror" class="main_frame2-3">
+                    <div class="wrapper">
+
+                        <!-- 제목 및 태그 입력 항목 -->
+                        <div style="max-height: 525px; opacity: 1;">
+                            <div class="topic">
+                                <textarea placeholder="제목을 입력하세요" class="topic-content" style="height: 86px;"></textarea>
+                                <div class="topic-mid"></div>
+                                <div class="topic-tag-start">
+                                    <input placeholder="태그를 입력하세요" tabindex="2" class="topic-tag-content" value>
+                                    <div class="topic-tag-end"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 제목 및 태그 입력 항목 -->
+
+                        <!-- 툴바 항목 -->
+                        <!--
+                        <div id="toolbar" class="toolbar">
+                            <button class="toolbar-content" value="1">
+                                <div class="toolbar-content-idx">"H"<span>1</span></div>
+                            </button>
+                            <button class="toolbar-content" value="2">
+                                <div class="toolbar-content-idx">"H"<span>2</span></div>
+                            </button>
+                            <button class="toolbar-content" value="3">
+                                <div class="toolbar-content-idx">"H"<span>3</span></div>
+                            </button>
+                            <button class="toolbar-content" value="4">
+                                <div class="toolbar-content-idx">"H"<span>4</span></div>
+                            </button>
+
+                            <div class="toolbar-layout"></div>
+                            <button class="toolbar-content">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="">
+                                    <path d=""></path>
+                                </svg>
+                            </button>
+                            <button class="toolbar-content">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="">
+                                    <path d=""></path>
+                                </svg>
+                            </button>
+                            <button class="toolbar-content">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="">
+                                    <path d=""></path>
+                                </svg>
+                            </button>
+
+                            <div class="toolbar-layout"></div>
+                            <button class="toolbar-content">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="">
+                                    <path d=""></path>
+                                </svg>
+                            </button>
+                            <button class="toolbar-content">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="">
+                                    <path d=""></path>
+                                </svg>
+                            </button>
+                            <button class="toolbar-content">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="">
+                                    <path d=""></path>
+                                </svg>
+                            </button>
+                            <button class="toolbar-content">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="">
+                                    <path d=""></path>
+                                </svg>
+                            </button>
+
+                            <div class="mobile-placeholder"></div>
+                        </div>
+                        -->
+                        <!-- 툴바 항목 -->
+                        <div>
+                            <div id="editor"></div>
+                        </div>
+                        <!-- 내용 작성 항목 -->
+                        <!--
+                        <div class="content">
+                            <textarea style="display: none;"></textarea>
+                            <div class="">
+                                <div style=""></div>
+
+                            </div>
+                        </div>
+                        -->
+                        <!-- 내용 작성 항목 -->
+
+                        <!-- 밑 부분 항목 -->
+
+                        <!-- 밑 부분 항목 -->
+
+                    </div>
+                    <!-- toast markdown editor -->
+                    <div>
+                        <div id="editor"></div>
+                    </div>
+                </div>
+                <div class="write-bottom-frame" style="width: 528px;">
+                    <div class="write-bottom">
+                        <button class="write-bottom-back">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                            </svg>
+                            <span>나가기</span>
+                        </button>
+                        <div class="write-bottom-block">
+                            <button color="lightGray" class="write-bottom-button1 write-bottom-button2">임시저장</button>
+                            <button color="teal" class="write-bottom-button1 write-bottom-button2">출간하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script>
+
+        const editor = new toastui.Editor({
+            el: document.querySelector('#editor'),
+            previewStyle: 'vertical',
+            height: '500px',
+            initialValue: '당신의 이야기를 적어보세요...'
+        });
+
+    </script>
+</body>
+</html>
